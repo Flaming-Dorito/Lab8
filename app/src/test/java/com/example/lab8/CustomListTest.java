@@ -23,15 +23,17 @@ public class CustomListTest {
         return list;
     }
 
+
+
     /**
      * test the addCity method
      */
     @Test
     public void testAddCity(){
         list = MockCityList();
-        City city = new City("Toronto", "Ontario");
-        list.addCity(city);
-        assertEquals(1, list.getCount());
+        int listSize = list.getCount();
+        list.addCity(new City("Toronto", "Ontario"));
+        assertEquals(list.getCount(), listSize + 1);
     }
 
 
